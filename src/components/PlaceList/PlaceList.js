@@ -7,17 +7,17 @@ const { listItemContainer } = PlaceListStyles;
 
 const PlaceList = props => {
   return (
-    <FlatList 
+    <FlatList
       style={listItemContainer}
       data={props.places}
-      renderItem={(info) => {
+      renderItem={(info) => (
         <ListItem
-          placeName={info.item.value} 
-          onItemPressed={() => props.onItemDeleted(info.item.key)} 
+          placeName={info.item.value}
+          onItemPressed={() => props.onItemDeleted(info.item.key)}
         />
-      }} 
+      )}
     />
   );
-}
+};
 
 export default PlaceList;
