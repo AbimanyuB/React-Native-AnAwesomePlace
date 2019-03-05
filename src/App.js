@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import PlaceInput from './components/PlaceInput/PlaceInput';
 import PlaceList from './components/PlaceList/PlaceList';
-
+import placeImage from './assets/images/beautiful-place.jpg';
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -10,13 +10,14 @@ export default class App extends Component {
       places: [] 
     };
   }
-
+ss
   addPlaceNameHandler = placeName => {
     this.setState(prevState => {
       return {
         places: prevState.places.concat({
           key: Math.random().toString(),
-          value: placeName
+          name: placeName,
+          image: placeImage
         })
       }
     })
@@ -37,7 +38,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <PlaceInput onPlaceAdded={this.addPlaceNameHandler} />
         <PlaceList 
-          places={this.state.places} 
+          places={this.state.places}
           onItemDeleted={this.deletedPlaceHandler} 
         />
       </View>
